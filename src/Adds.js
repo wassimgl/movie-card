@@ -8,18 +8,17 @@ const Adds = ({ handleAdd }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [url, setUrl] = useState("");
-  const [rate, setRate] = useState(0);
+const [rate, setRate] = useState(0);
 const[id,setId]= useState("");
-  const handleSubmit = (e) => {
+const handleSubmit = (e) => {
       e.preventDefault();
-      const newMovie = {
-          
-          title,
-          description,
-          posterUrl: url,
-          id,
-          rate,
-      };
+const newMovie = {      
+    title,
+    description,
+    posterUrl: url,
+    id,
+    rate,
+ };
       handleAdd(newMovie);
   }
 

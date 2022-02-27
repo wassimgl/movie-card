@@ -1,20 +1,25 @@
 import React,{useState} from 'react'
- import StarRatingComponent from 'react-star-rating-component';
-const Searche = () => {
-        const[rate,setRate]= useState(1)
+import StarRatingComponent from 'react-star-rating-component';
+
+
+const Searche = ({handleChange,ratingChanged,rate}) => {
+     const [title, setTitle] = useState("");   
+    // const[rate,setRate]= useState(0)
     const onStarClick=(nextValue, prevValue, name) =>{
-        setRate(nextValue);
+      ratingChanged(nextValue);   
     }
    
-  return (
+   
+return (
     <div className='sear'>
-      <input type="text" placeholder="search"/>
+      <input type="text" placeholder="search" onChange={handleChange} />
       <input  type="submit" value="SEARCH" />
- <StarRatingComponent 
+      <StarRatingComponent 
           name="rate1" 
           starCount={8}
-          value={rate}
           onStarClick={onStarClick}
+        value={rate}
+        
         />
     </div>
   )

@@ -8,6 +8,7 @@ import Adds from './Adds';
 
 
 function App() {
+  const [rate, setRate] = useState(0);
   const [movies, setMovies] = useState([
     {
           title:"Rush",
@@ -76,15 +77,24 @@ function App() {
                   rate: 7,
                 },
   ])
-
   
+  const [title, setTitle] = useState("");
+  const handleChange = (e) => {
+    setTitle(e.target.value);
+    
+  }
+  
+  const ratingChanged = (newRating) => {
+    setRate(newRating);
+    
+  }
   return (
    <div className='movie-container'>
    
-     <Searche/>
+     <Searche   handleChange={handleChange} ratingChanged={ratingChanged} rate={rate}/>
      <Adds/>
      
-     <MoviesList movies={movies}/>
+     <MoviesList movies={movies.filter(mv=>mv.title.toLowerCase().includes(title.toLowerCase()) && mv.rate >= rate)}/>
 
      
 
