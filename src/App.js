@@ -88,11 +88,14 @@ function App() {
     setRate(newRating);
     
   }
+  const handleAdd = (newMovie) => {
+    setMovies([...movies, newMovie]);
+  }
   return (
    <div className='movie-container'>
    
      <Searche   handleChange={handleChange} ratingChanged={ratingChanged} rate={rate}/>
-     <Adds/>
+     <Adds  handleAdd={handleAdd}/>
      
      <MoviesList movies={movies.filter(mv=>mv.title.toLowerCase().includes(title.toLowerCase()) && mv.rate >= rate)}/>
 
