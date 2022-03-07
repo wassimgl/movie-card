@@ -1,22 +1,25 @@
 import React from 'react'
-import { BsFillHeartFill,BsFillShareFill,BsFillChatLeftFill,BsFillCloudDownloadFill } from "react-icons/bs";
+import { Link } from 'react-router-dom';
+import StarRatingComponent from 'react-star-rating-component';
+
 
 const MoviesCard = ({movie}) => {
+  
   return (
     <div className='cards'>
     <h1 className='titre'>{movie.title}</h1>
-    <img className='photo' src={movie.posterUrl}/>
-    <h3 className='iden'>{movie.id}</h3>
+ 
+    <Link to={`${movie.id}`}><div><img className='photo'  src={movie.posterUrl} alt=''/></div></Link>
+    <h3 className='iden'>{movie.ide}</h3>
     <p className='descr'>{movie.description}</p>
-    <h2 className='rat'>{movie.rate}</h2>
-    <div class="movie_social">
-      <ul>
-        <li><h4>  <BsFillHeartFill /> </h4></li>
-        <li><h4> <BsFillShareFill/> </h4></li>
-        <li><h4><BsFillChatLeftFill/> </h4> </li>
-        <li><h4><BsFillCloudDownloadFill/> </h4> </li>
-      </ul>
-    </div>
+    <h2 className='rat'>
+    <StarRatingComponent 
+          name="rate1" 
+          starCount={8}
+          
+        value={movie.rate}/>
+    </h2>
+    
 
     </div>
     

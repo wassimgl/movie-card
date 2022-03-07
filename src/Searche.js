@@ -3,7 +3,6 @@ import StarRatingComponent from 'react-star-rating-component';
 
 
 const Searche = ({handleChange,ratingChanged,rate}) => {
-     const [title, setTitle] = useState("");   
     // const[rate,setRate]= useState(0)
     const onStarClick=(nextValue, prevValue, name) =>{
       ratingChanged(nextValue);   

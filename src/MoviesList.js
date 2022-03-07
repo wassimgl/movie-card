@@ -5,8 +5,10 @@ import MoviesCard from './MoviesCard'
 const MoviesList = ({movies}) => {
   
   return (
+
     <div>
-        {movies.map(el=><MoviesCard movie={el}/>)}
+    
+{movies.map(el=><MoviesCard movie={el}/>)}
         
     </div>
   )

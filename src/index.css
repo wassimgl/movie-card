@@ -4,7 +4,7 @@
   padding: 0;
 }
 body{
-  background: url("https://c4.wallpaperflare.com/wallpaper/22/762/507/film-movie-filmmaker-movie-director-wallpaper-preview.jpg");
+  /* background: url("https://c4.wallpaperflare.com/wallpaper/22/762/507/film-movie-filmmaker-movie-director-wallpaper-preview.jpg"); */
   color: white;
   font-family: 'Segoe UI', sans-serif;
 }
@@ -69,6 +69,11 @@ body{
   padding-left: 15px;
   padding-bottom: 20px;
 }
+.movie-details{
+  color: rgb(48, 48, 47);
+  font-size: medium;
+  
+}
   ul{
     list-style: none;
     padding: 0;
@@ -87,5 +92,15 @@ body{
       .rat{
         margin-bottom: 30px;
       }
-    
+      .des{
+        position: relative;
+        display: block;
+        width: 900px;
+        height: 550px;
+        margin: 50px auto; 
+        overflow: hidden;
+        border-radius: 10px;
+        transition: all 0.4s;
+        box-shadow: 0px 0px 120px -25px rgba(0,0,0, 0.5);
+      }
   
